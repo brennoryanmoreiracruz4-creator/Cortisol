@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(45deg, #00d4aa, #00a085, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.highlight {
+  color: #00d4aa !important;
+  font-weight: 700;
+}
+
+.new-badge {
+  background: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.stats {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #00d4aa;
+}
+
+.content-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.content-selector button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.content-selector button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.content-selector button.active {
+  background: linear-gradient(45deg, #00d4aa, #00a085);
+  box-shadow: 0 8px 25px rgba(0,212,170,0.4);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.main-content {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.video-section {
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  background: linear-gradient(45deg, #fff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 12px;
+  }
+  
+  .content-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-selector button {
+    width: 200px;
+  }
+  
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
