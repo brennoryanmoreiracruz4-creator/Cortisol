@@ -1,1 +1,2 @@
-# Cortisol
+npm install
+npm start
